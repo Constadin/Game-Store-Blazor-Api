@@ -1,0 +1,25 @@
+﻿@inject NavigationManager Navigation
+
+<nav
+    class="navbar bg-body-tertiary"
+    data-bs-theme="dark">
+    <div
+        class="container container-nav d-flex flex-row justify-content-between align-items-center">
+        <span
+            class="navbar-brand m-10 p-0">Game Store
+        </span>
+        @if(IsGameCatalogActive)
+        {
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search
+                </button>
+            </form>
+        }
+    </div>
+</nav>
+
+
+@code{
+    private bool IsGameCatalogActive => Navigation.Uri == Navigation.BaseUri;
+}

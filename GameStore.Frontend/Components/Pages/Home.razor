@@ -1,0 +1,63 @@
+﻿@page "/"
+@inject  GamesClient Client
+
+
+<PageTitle>Game Catalog</PageTitle>
+
+<div>
+    <a class="btn btn-primary m-2 px-5 bg-success " href="/editgame">Add Game</a>
+</div>
+
+@if(games is null)
+{   
+    <div
+        class="spinner-grow text-warning bg-warning ms-2"
+        role="status">
+        <span 
+            class="visually-hidden">Loading...
+        </span>
+        <p 
+            class="loading-p">
+                <em 
+                    class="loading-em">Loading...
+                </em>
+            </p>
+    </div>
+    
+}
+else{
+    <table class="table table-gameStore table-border table-striped table-bordered table-hover">
+        <thead
+        class="table-dark">
+            <th>Id</th>
+            <th>Game</th>
+            <th>Genre</th>
+            <th class="text-end">Price</th>
+            <th>Realease Date</th>
+            <th></th>
+        </thead>
+        <tbody>
+            @foreach (var game in games)
+            {
+                <tr>
+                    <td>@game.Id</td>
+                    <td class="game-name">@game.Name</td>
+                    <td>@game.Genre</td>
+                    <td class="text-end">@game.Price.ToString("C2")</td>
+                    <td>@game.ReleaseDate</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    
+    private GameSummary[]? games;
+
+    protected override void OnInitialized()
+    {  
+        games = Client.GetGames();
+    }
+}    

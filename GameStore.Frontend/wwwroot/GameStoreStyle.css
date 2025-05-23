@@ -1,0 +1,32 @@
+
+.loading-p{
+    margin: 0 50px;
+}
+
+.loading-em{
+    color: yellow;
+    font-size: 15px;
+}
+
+.table-gameStore{
+    border: 2px solid green !important;
+}
+.game-name{
+    font-style: italic;
+}
+.edit-form-game{
+    border: 2px solid #3d3b3b;
+    background-color: grey;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px -1px 2px white , -1px 1px 2px white;
+}
+.newGame-title{
+    color: white;
+    font-size: 25px;
+}
+
+.input-nameGame::placeholder{
+    color: black;
+    font-weight: 600;
+}

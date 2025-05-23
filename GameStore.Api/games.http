@@ -1,0 +1,31 @@
+GET http://localhost:5073/games
+
+###
+GET http://localhost:5073/games/1
+
+###
+
+POST http://localhost:5073/games
+Content-Type: application/json
+
+{
+    "name": "The Starving Artist",
+    "genreId": 3,
+    "price": 22.25,
+    "releaseDate": "2020-01-05"
+}
+
+###
+PUT http://localhost:5073/games/1
+Content-Type: application/json
+
+{
+    
+    "name": "Dragon Ball Z: Kakarot",
+    "genreId": 2,
+    "price": 32.25,
+    "releaseDate": "2024-01-05"
+}
+
+###
+DELETE http://localhost:5073/games/5
